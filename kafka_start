@@ -14,3 +14,10 @@ bin/windows/kafka-topics.bat --list --bootstrap-server localhost:9092
 
 #Kafka Console Consumer
 bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic Learning_Kafka_1 --from-beginning
+
+
+#Changing Kafka Topic partition
+bin/windows/kafka-topics.bat --bootstrap-server localhost:9092 --alter --topic Learning_Kafka_1 --partitions 3 
+
+#Describe the kafka group
+bin/windows/kafka-consumer-groups.bat --bootstrap-server localhost:9092 --group My-first-app --describe

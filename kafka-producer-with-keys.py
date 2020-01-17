@@ -23,8 +23,8 @@ def on_send_error(excp):
 # Same Key always goes to same partition
 for i in range(10):
     message = "Hello" + str(i)
-    key = b'id_' + bytes(i)
-    producer.send('Learning_Kafka_1', key=key, value=message).add_callback(on_send_success).add_errback(on_send_error)
+    key = 'id_' + str(i)
+    producer.send('Learning_Kafka_1', key=key.encode('utf-8'), value=message).add_callback(on_send_success).add_errback(on_send_error)
 
 
 # Flush data
